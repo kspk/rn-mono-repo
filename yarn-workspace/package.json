@@ -1,0 +1,27 @@
+{
+    "name": "mono",
+    "version": "0.0.1",
+    "private": true,
+    "workspaces": {
+        "packages": [
+            "pkgs/*"
+        ],
+        "nohoist": [
+            "**/react",
+            "**/react/**",
+            "**/react-dom",
+            "**/react-native",
+            "**/react-native/**",
+            "**/react-native-macos/**"
+        ]
+    },
+    "scripts": {
+        "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock",
+        "android:metro": "yarn workspace @mono/mobile start",
+        "android:start": "yarn workspace @mono/mobile android",
+        "android:studio": "yarn workspace @mono/mobile studio",
+        "ios:metro": "yarn workspace @mono/mobile start",
+        "ios:start": "yarn workspace @mono/mobile ios",
+        "ios:xcode": "yarn workspace @mono/mobile xcode"
+    }
+}
